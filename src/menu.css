@@ -1,0 +1,30 @@
+.menu{
+    display: flex;
+    height: 3.5rem;
+    background: red;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.menu li{
+
+    list-style: none;
+    width: calc(50% - 1rem);
+    text-align: center;
+    background: green;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li:hover{
+    background: yellow;
+}
+
+@media only screen and (min-width:670px){
+    .menu li{
+        width: calc(25% - 1rem);
+    }
+}
