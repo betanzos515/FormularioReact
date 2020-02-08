@@ -15,7 +15,7 @@ import {calcularTotal} from './handlers';
         } 
 
         guardarError(false);
-        calcularTotal(cantidad,plazo);
+        console.log(calcularTotal(cantidad,plazo));
         
     }
     return(

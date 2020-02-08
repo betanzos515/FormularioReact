@@ -1,5 +1,48 @@
 export const calcularTotal = (cantidad,plazo)=>{
-    setTimeout(()=>{
-        console.log(`Recibiendo datos desde componente ${cantidad} y ${plazo}`);
-    },5000)
+    /*
+    0-1000 = 25%;
+    1001 - 5000 = 20%;
+    5001 - 10000 = 15;
+    +10000 = 10%
+    */
+
+    let totalCantidad = 0;
+    let totalPlazo = 0;
+    
+
+    if(cantidad > 0 && cantidad < 1000){
+        totalCantidad = cantidad * 0.25; 
+    }
+    else if(cantidad > 1000 && cantidad < 5000){
+        totalCantidad = cantidad * 0.20;
+    }
+    else if (cantidad > 5000 && cantidad < 10000){
+        totalCantidad = cantidad * 0.15;
+    }
+    else{
+        totalCantidad = cantidad * 0.10;
+    }
+
+    /* Calcular intereses por plazo */
+
+    switch(plazo){
+        case 3:
+            totalPlazo = cantidad * 0.05;
+            break;
+        case 6:
+            totalPlazo = cantidad * 0.10;
+            break;
+        case 12:
+            totalPlazo = cantidad * 0.15;
+            break;
+        case 24:
+            totalPlazo = cantidad * 0.20;
+            break;
+        default:
+            break;
+    }
+
+    return cantidad + totalPlazo + totalCantidad;
+
+
 }
