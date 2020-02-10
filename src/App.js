@@ -6,7 +6,12 @@ import Mensaje from './Mensaje';
 function App() {
   const [cantidad,actualizarCantidad]=useState(0);
   const [plazo,calcularPlazo]=useState('');
-  const complemento = <Mensaje/>;
+  const [total, actualizarTotal] = useState(0);
+  let complemento = <Mensaje/>;
+  if(total > 0){
+    complemento = `El resultado es ${total}`;
+  }
+  
   return (
    <div>
      <div>
@@ -17,6 +22,7 @@ function App() {
           actualizarCantidad = {actualizarCantidad}
           plazo={plazo}
           calcularPlazo = {calcularPlazo}
+          actualizarTotal = {actualizarTotal}
         />
        {complemento}
         

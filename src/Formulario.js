@@ -1,7 +1,7 @@
 import React,{Fragment, useState} from 'react';
 import {calcularTotal} from './handlers';
 
-    const Formulario = ({cantidad,actualizarCantidad,plazo, calcularPlazo})=>{
+    const Formulario = ({cantidad,actualizarCantidad,plazo, calcularPlazo, actualizarTotal})=>{
         
     const [error,guardarError] = useState(false);
     
@@ -15,7 +15,7 @@ import {calcularTotal} from './handlers';
         } 
 
         guardarError(false);
-        console.log(calcularTotal(cantidad,plazo));
+        actualizarTotal(calcularTotal(cantidad,plazo));
         
     }
     return(
